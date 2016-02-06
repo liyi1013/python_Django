@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+import article.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,4 +26,5 @@ urlpatterns = [
     url(r'^(?P<id>\d+)/$', 'article.views.detail', name='detail'),
     url(r'^test/$', 'article.views.test'),
     url(r'^base/$', 'article.views.base'),
+    url(r'^add/(\d+)/(\d+)/$',article.views.add,name="add"),
 ]

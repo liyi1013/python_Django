@@ -34,3 +34,9 @@ def test(request):
 
 def base(request):
     return render(request, 'base.html')
+
+def add(request,a,b):
+    mysum =int(a)+int(b)
+    s = ("%s + %s = %s"
+           %(a, b, str(mysum)))
+    return HttpResponse(s)
